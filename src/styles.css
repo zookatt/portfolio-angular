@@ -1,3 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import 'tailwindcss';
+
+:root {
+  --color-bg-main: #271a15;
+  --color-surface-card: #2e2018;
+  --color-accent-primary: #495a8c;
+  --color-accent-hover: #5b92d9;
+  --color-accent-lilac: #7a84b5;
+  --color-accent-pink: #d9a7b0;
+  --color-petrol: #486e77;
+  --color-text-main: #f8c8a1;
+  --color-text-secondary: #e7c4b2;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-bg-main);
+    color: var(--color-text-secondary);
+  }
+}
