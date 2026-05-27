@@ -75,8 +75,8 @@ export const PROJECTS: Project[] = [
     description:
       'MVP de startup presentado en el Mobile World Congress 2025. Lideré el frontend desde cero: arquitectura, stack y despliegue. Reducción del tiempo de carga en un 30% y mejora de eficiencia del 20% mediante componentes reutilizables.',
     tags: ['React', 'Next.js', 'Tailwind CSS', 'AWS'],
-    imageUrl: '/assets/images/projects/mindchef.webp',
-    demoUrl: '',
+    imageUrl: '/assets/images/projects/mindchef.png',
+    demoUrl: 'https://mindchefai.com/',
     githubUrl: '',
     featured: true,
     badge: 'MWC 2025 ✦',
@@ -87,7 +87,7 @@ export const PROJECTS: Project[] = [
     description:
       'Modernización de web ecommerce tecnológica. Rediseño UX/UI en Figma, desarrollo frontend con HTML5 semántico, enfoque Mobile First, JavaScript y Tailwind CSS. Optimización de accesibilidad.',
     tags: ['HTML5', 'JavaScript', 'Tailwind CSS', 'Figma'],
-    imageUrl: '/assets/images/projects/tech-shop.webp',
+    imageUrl: '/assets/images/projects/tech-shop.jpg',
     demoUrl: '',
     githubUrl: 'https://github.com/zookatt/tech-shop',
     featured: false,
@@ -99,7 +99,7 @@ export const PROJECTS: Project[] = [
     description:
       'Landing page replicando la interfaz de Spotify. Maquetación con HTML semántico, diseño responsive con CSS Flexbox e implementación de funcionalidades interactivas con JavaScript.',
     tags: ['HTML', 'CSS', 'JavaScript'],
-    imageUrl: '/assets/images/projects/spotify-clone.webp',
+    imageUrl: '/assets/images/projects/spotify.png',
     demoUrl: '',
     githubUrl: 'https://github.com/zookatt/clon-spotify',
     featured: false,

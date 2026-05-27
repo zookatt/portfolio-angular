@@ -1,0 +1,13 @@
+<a
+  [attr.href]="href || null"
+  [attr.target]="target || null"
+  [attr.rel]="rel || null"
+  [class]="
+    (variant === 'primary'
+      ? 'flex-1 rounded-lg border border-[var(--color-accent-primary)] bg-[var(--color-accent-primary)]/10 px-3 py-2 text-center text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-accent-hover)] transition-colors hover:bg-[var(--color-accent-primary)]/20'
+      : 'flex-1 rounded-lg border border-[var(--color-accent-lilac)] bg-[var(--color-accent-lilac)]/10 px-3 py-2 text-center text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-accent-lilac)] transition-colors hover:bg-[var(--color-accent-lilac)]/20') +
+    (disabled ? ' opacity-50 pointer-events-none' : '')
+  "
+>
+  {{ text }}
+</a>

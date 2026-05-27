@@ -1,1 +1,85 @@
-<p>projects works!</p>
+<section class="bg-[var(--color-bg-main)] py-16 text-[var(--color-text-main)]">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="mb-12 flex items-center justify-between gap-4">
+      <div class="space-y-2">
+        <p class="text-xs uppercase tracking-[0.4em] text-[var(--color-accent-pink)]">Portafolio</p>
+        <h2 class="text-4xl font-semibold tracking-tight text-[var(--color-text-main)] sm:text-5xl">
+          Proyectos
+        </h2>
+      </div>
+    </div>
+
+    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+      @for (project of projects; track project.id) {
+        <article
+          class="group overflow-hidden rounded-2xl border border-[var(--color-surface-card)] bg-[var(--color-surface-card)]/95 shadow-lg transition-all duration-300 hover:border-[var(--color-accent-pink)] hover:shadow-[0_20px_60px_rgba(217,167,176,0.1)]"
+        >
+          <!-- Image -->
+          <div class="relative h-48 w-full overflow-hidden bg-[var(--color-surface-card)] sm:h-56">
+            @if (project.imageUrl) {
+              <img
+                [src]="project.imageUrl"
+                [alt]="project.title"
+                class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+            } @else {
+              <div class="flex h-full items-center justify-center text-[var(--color-accent-lilac)]">
+                <span class="text-lg font-semibold">{{ project.title }}</span>
+              </div>
+            }
+
+            @if (project.badge) {
+              <div
+                class="absolute right-3 top-3 rounded-full border border-[var(--color-accent-pink)] bg-[var(--color-bg-main)]/95 px-3 py-1 text-xs font-semibold text-[var(--color-accent-pink)] backdrop-blur-sm"
+              >
+                {{ project.badge }}
+              </div>
+            }
+          </div>
+
+          <!-- Content -->
+          <div class="flex h-full flex-col p-6">
+            <div class="gap-1">
+              <h3 class="text-xl font-semibold text-[var(--color-text-main)]">
+                {{ project.title }}
+              </h3>
+              <p class="line-clamp-3 text-sm leading-6 text-[var(--color-text-secondary)]">
+                {{ project.description }}
+              </p>
+            </div>
+
+            <!-- Tags -->
+            <div class="mt-4 flex flex-wrap gap-2">
+              @for (tag of project.tags; track tag) {
+                <span
+                  class="rounded-full border border-[var(--color-accent-lilac)]/20 bg-[var(--color-bg-main)]/70 px-3 py-1 text-xs font-medium text-[var(--color-text-main)] uppercase tracking-[0.2em]"
+                >
+                  {{ tag }}
+                </span>
+              }
+            </div>
+
+            <!-- Actions -->
+            <div class="mt-2 flex gap-1 pt-1 border-t border-[var(--color-surface-card)]">
+              <app-button
+                [href]="project.demoUrl"
+                [text]="'Demo'"
+                [variant]="'primary'"
+                target="_blank"
+                rel="noopener noreferrer"
+              ></app-button>
+
+              <app-button
+                [href]="project.githubUrl"
+                [text]="'GitHub'"
+                [variant]="'secondary'"
+                target="_blank"
+                rel="noopener noreferrer"
+              ></app-button>
+            </div>
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>
